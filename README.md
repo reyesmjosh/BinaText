@@ -1,1 +1,1 @@
-Convert Text to Binary and vice versa using Chaqoupy 10.0
+Convert Text to Binary Converter and vice versa using Chaqoupy 10.0
