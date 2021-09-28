@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,118 +8,138 @@
     tools:context=".MainActivity">
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/aboveselector"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/select"
-        android:padding="10dp"
-        android:id="@+id/aboveselector"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+        android:padding="10dp">
+
         <AutoCompleteTextView
             android:id="@+id/auto_complete_txt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="none"/>
+            android:inputType="none" />
     </com.google.android.material.textfield.TextInputLayout>
-<ScrollView
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_below="@+id/aboveselector">
 
-    <RelativeLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp"
-        android:layout_marginTop="5dp"
-       >
+        android:layout_below="@+id/aboveselector">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Input"
-            android:id="@+id/input"
-            android:fontFamily="sans-serif-light"
-            android:textSize="16sp"
-            android:textColor="@color/black" />
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:id="@+id/rel"
-            android:padding="10dp"
-            android:background="@drawable/shape"
-            android:layout_marginTop="10dp"
-            android:layout_below="@+id/input">
-
-        <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:textSize="20sp"
-            android:fontFamily="sans-serif-light"
-            android:textColor="@color/black"
-            android:id="@+id/userInput"
-            android:background="@drawable/shape_inv"
-            android:layout_alignParentStart="true"
+            android:layout_marginTop="5dp"
+            android:padding="10dp">
 
-            />
-        </RelativeLayout>
-
-        <Button
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:text="convert"
-            android:background="@drawable/button_round"
-            android:id="@+id/convertInput"
-            android:layout_below="@+id/rel"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="10dp"
-            />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Result"
-            android:id="@+id/input2"
-            android:fontFamily="sans-serif-light"
-            android:textSize="16sp"
-            android:layout_below="@+id/convertInput"
-            android:textColor="@color/black" />
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_below="@+id/input2"
-            android:padding="10dp"
-            android:id="@+id/inputResult"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/shape"
-            >
             <TextView
+                android:id="@+id/input"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/output"
-                android:textSize="20sp"
-                android:textColor="@color/black"
                 android:fontFamily="sans-serif-light"
-                android:layout_alignParentStart="true"/>
+                android:text="Input"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:id="@+id/rel"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@+id/input"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/userInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:background="@drawable/shape_inv"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/mid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rel"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp">
+
+                <Button
+                    android:id="@+id/convertInput"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/button_round"
+                    android:text="convert" />
+
+                <Button
+                    android:id="@+id/inputClear"
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@+id/convertInput"
+                    android:background="@drawable/button_round"
+                    android:text="clear" />
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/input2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/mid"
+                android:fontFamily="sans-serif-light"
+                android:text="Result"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:id="@+id/inputResult"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_below="@+id/input2"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape"
+                android:padding="10dp">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/output"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:fontFamily="sans-serif-light"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+                </ScrollView>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/copyResult"
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/inputResult"
+                android:layout_centerHorizontal="true"
+                android:layout_margin="10dp"
+                android:background="@drawable/button_round"
+                android:text="copy" />
+
 
         </RelativeLayout>
-
-        <Button
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:text="copy"
-            android:id="@+id/copyResult"
-            android:background="@drawable/button_round"
-            android:layout_below="@+id/inputResult"
-            android:layout_centerHorizontal="true"
-            android:layout_margin="10dp"
-            />
-
-
-
-    </RelativeLayout>
-</ScrollView>
-
-
+    </ScrollView>
 
 
 </RelativeLayout>
